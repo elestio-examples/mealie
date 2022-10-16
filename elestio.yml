@@ -34,5 +34,5 @@ lifeCycleConfig:
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
     label: "Mealie Admin"
-    login: "[ADMIN_MAIL]"
-    password: "[ADMIN_PASSWORD2]"
+    login: [ADMIN_MAIL]
+    password: [ADMIN_PASSWORD2]
