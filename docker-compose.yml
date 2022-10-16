@@ -8,9 +8,9 @@ services:
       dockerfile: Dockerfile
     restart: always
     volumes:
-      - ./mealie-data:/app/data/
+      - ./mealie:/app/data/
     ports:
-      - 172.17.0.1:9091:3000
+      - 172.17.0.1:21080:3000
     environment:
       - API_URL=http://mealie-api:9000
 
@@ -40,9 +40,9 @@ services:
       dockerfile: Dockerfile
     restart: always
     volumes:
-      - ./mealie-data:/app/data/
+      - ./mealie:/app/data/
     ports:
-      - 172.17.0.1:9092:9000
+      - 172.17.0.1:21080:9000
     environment:
       ALLOW_SIGNUP: "false"
 
