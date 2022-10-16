@@ -2,7 +2,7 @@ version: "3.4"
 services:
   mealie-frontend:
     container_name: mealie-frontend
-    image: mealie-frontend:dev
+    image: mealie-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
