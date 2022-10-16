@@ -11,9 +11,9 @@ environments:
   - key: "ADMIN_PASSWORD"
     value: "random_password"
   - key: "ADMIN_MAIL"
-    value: "changeme@email.com"
+    value: changeme@email.com
   - key: "ADMIN_PASSWORD2"
-    value: "MyPassword"
+    value: MyPassword
 
 config:
   runTime: "dockerCompose"
@@ -34,5 +34,5 @@ lifeCycleConfig:
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
     label: "Mealie Admin"
-    login: [ADMIN_MAIL]
-    password: [ADMIN_PASSWORD2]
+    login: "[ADMIN_MAIL]"
+    password: "[ADMIN_PASSWORD2]"
