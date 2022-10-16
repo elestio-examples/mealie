@@ -6,4 +6,4 @@ echo "Waiting for software to be ready ..."
 sleep 10s;
 
 #register the local server in the web ui
-target=$(docker-compose port mealie-frontend 3000)
+target=$(docker-compose port mealie 9000)
