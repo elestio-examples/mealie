@@ -33,6 +33,6 @@ lifeCycleConfig:
   postRestoreCommand: "./scripts/postRestore.sh"
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
-    label: "Mealie Admin"
-    login: "changeme@email.com"
-    password: "MyPassword"
+    label: "Mealiee Admin"
+    login: "[ADMIN_MAIL]"
+    password: "[ADMIN_PASSWORD2]"
