@@ -19,5 +19,5 @@ target=$(docker-compose port mealie 80)
   -H 'Referer: https://mealie-u353.vm.elestio.app/' \
   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36' \
   -H 'sec-ch-ua-platform: "macOS"' \
-  --data-raw $'------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="username"\r\n\r\n'"$ADMIN_MAIL"'\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="password"\r\n\r\n'"$ADMIN_PASSWORD2"'\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB--\r\n' \
+  --data-raw $'------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="username"\r\n\r\nchangeme@email.com\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="password"\r\n\r\nMyPassword\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB--\r\n' \
   --compressed
