@@ -4,11 +4,11 @@ services:
     image: hkotel/mealie:latest
     restart: always
     ports:
-      - 172.17.0.1:9925:80
+      - "172.17.0.1:9925:80"
     environment:
       PUID: 1000
       PGID: 1000
-      TZ: UTC
+      TZ: "UTC"
 
       # Default Recipe Settings
       RECIPE_PUBLIC: "true"
