@@ -5,11 +5,11 @@ set -o allexport; source .env; set +o allexport;
 echo "Waiting for software to be ready ..."
 sleep 10s;
 
-target=${docker-compose port mealie 80}
+#register the local server in the web ui
+target=$(docker-compose port mealie 80)
 
 
-
-  curl 'https://mealie-u353.vm.elestio.app/api/auth/token' \
+  curl http://$target/api/auth/token \
   -H 'sec-ch-ua: "Google Chrome";v="105", "Not)A;Brand";v="8", "Chromium";v="105"' \
   -H 'Accept-Language: en-US' \
   -H 'sec-ch-ua-mobile: ?0' \
