@@ -10,6 +10,8 @@ ports:
 environments:
   - key: "ADMIN_PASSWORD"
     value: "random_password"
+  - key: "EMAIL"
+    value: "[EMAIL]"
 
 config:
   runTime: "dockerCompose"
@@ -30,5 +32,5 @@ lifeCycleConfig:
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
     label: "Mealie Admin"
-    login: ""
+    login: "[EMAIL]"
     password: "[ADMIN_PASSWORD]"
