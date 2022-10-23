@@ -68,7 +68,7 @@ sleep 10s;
   -H 'Accept: application/json, text/plain, */*' \
   -H Referer: http://$target/ \
   -H 'sec-ch-ua-mobile: ?0' \
-  -H 'Authorization: Bearer ${jwt}' \
+  -H Authorization: Bearer $jwt \
   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36' \
   -H 'sec-ch-ua-platform: "macOS"' \
   --compressed
