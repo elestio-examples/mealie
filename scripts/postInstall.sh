@@ -60,7 +60,7 @@ sleep 10s;
   # --data-raw '{"currentPassword":"MyPassword","newPassword":"123456789"}' \
   # --compressed
 
-
+echo $jwt
 
 
   curl http://$target/api/groups/self \
