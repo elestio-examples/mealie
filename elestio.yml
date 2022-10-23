@@ -10,7 +10,7 @@ ports:
 environments:
   - key: "ADMIN_PASSWORD"
     value: "random_password"
-  - key: "EMAIL"
+  - key: "ADMIN_EMAIL"
     value: "[EMAIL]"
 
 config:
@@ -32,5 +32,5 @@ lifeCycleConfig:
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
     label: "Mealie Admin"
-    login: "[EMAIL]"
+    login: "[ADMIN_EMAIL]"
     password: "[ADMIN_PASSWORD]"

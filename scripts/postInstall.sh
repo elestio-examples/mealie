@@ -31,7 +31,7 @@ target=$(docker-compose port mealie 80)
   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36' \
   -H 'Content-Type: application/json;charset=UTF-8' \
   -H 'Accept: application/json, text/plain, */*' \
-  --data-raw '{"username":"root","fullName":"root","email":"'"${EMAIL}"'","admin":true,"group":"Home","favoriteRecipes":[],"id":1,"tokens":[]}' \
+  --data-raw '{"username":"root","fullName":"root","email":"'"${ADMIN_EMAIL}"'","admin":true,"group":"Home","favoriteRecipes":[],"id":1,"tokens":[]}' \
   --compressed)
 
   access_token=$(echo $JWT | jq -r '.access_token' )
