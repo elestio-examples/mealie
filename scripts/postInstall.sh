@@ -63,10 +63,10 @@ target=$(docker-compose port mealie 80)
 
 
 
-  curl 'https://mealie2-u353.vm.elestio.app/api/groups/self' \
+  curl http://$target/api/groups/self \
   -H 'sec-ch-ua: "Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"' \
   -H 'Accept: application/json, text/plain, */*' \
-  -H 'Referer: https://mealie2-u353.vm.elestio.app/' \
+  -H Referer: http://$target/ \
   -H 'sec-ch-ua-mobile: ?0' \
   -H 'Authorization: Bearer ${jwt}' \
   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36' \
