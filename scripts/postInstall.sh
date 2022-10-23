@@ -11,21 +11,22 @@ target=$(docker-compose port mealie 80)
   # Stocker
 
   JWT=$(curl http://$target/api/auth/token -H 'Authorization: Bearer' -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundarynpgizoN5sX7Eg1AB' -H 'Accept: application/json, text/plain, */*' --data-raw $'------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="username"\r\n\r\nchangeme@email.com\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="password"\r\n\r\nMyPassword\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB--\r\n' --compressed)
-  sleep 10s;
 
+  echo "JWT " ${JWT}
+  
   access_token=$(echo $JWT | jq -r '.access_token' )
 
   echo "access_token1 " ${access_token}
 
-  # curl http://$target/api/groups/self \
-  # -H 'sec-ch-ua: "Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"' \
-  # -H 'Accept: application/json, text/plain, */*' \
-  # -H Referer: http://$target/ \
-  # -H 'sec-ch-ua-mobile: ?0' \
-  # -H 'Authorization: Bearer '"${access_token}"'' \
-  # -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36' \
-  # -H 'sec-ch-ua-platform: "macOS"' \
-  # --compressed
+  curl http://$target/api/groups/self \
+  -H 'sec-ch-ua: "Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H Referer: http://$target/ \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'Authorization: Bearer '"${access_token}"'' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  --compressed
 
   JWT=$(curl http://$target/api/users/1 \
   -X 'PUT' \
@@ -36,7 +37,9 @@ target=$(docker-compose port mealie 80)
   -H 'Accept: application/json, text/plain, */*' \
   --data-raw '{"username":"root","fullName":"root","email":"'"${ADMIN_EMAIL}"'","admin":true,"group":"Home","favoriteRecipes":[],"id":1,"tokens":[]}' \
   --compressed)
-  sleep 10s;
+
+  echo "JWT " ${JWT}
+
 
   access_token=$(echo $JWT | jq -r '.access_token' )
 
