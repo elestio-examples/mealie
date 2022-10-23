@@ -11,9 +11,9 @@ target=$(docker-compose port mealie 80)
   # Stocker
 
   JWT=$(curl http://$target/api/auth/token -H 'Authorization: Bearer' -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundarynpgizoN5sX7Eg1AB' -H 'Accept: application/json, text/plain, */*' --data-raw $'------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="username"\r\n\r\nchangeme@email.com\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="password"\r\n\r\nMyPassword\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB--\r\n' --compressed)
-
+  sleep 5s;
   echo "JWT " ${JWT}
-  
+
   access_token=$(echo $JWT | jq -r '.access_token' )
 
   echo "access_token1 " ${access_token}
@@ -37,7 +37,7 @@ target=$(docker-compose port mealie 80)
   -H 'Accept: application/json, text/plain, */*' \
   --data-raw '{"username":"root","fullName":"root","email":"'"${ADMIN_EMAIL}"'","admin":true,"group":"Home","favoriteRecipes":[],"id":1,"tokens":[]}' \
   --compressed)
-
+  sleep 5s;
   echo "JWT " ${JWT}
 
 
