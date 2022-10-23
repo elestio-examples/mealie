@@ -16,7 +16,7 @@ target=$(docker-compose port mealie 80)
   -H 'Authorization: Bearer' \
   -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundarynpgizoN5sX7Eg1AB' \
   -H 'Accept: application/json, text/plain, */*' \
-  -H 'Referer: https://mealie-u353.vm.elestio.app/' \
+  -H Referer: http://$target/ \
   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36' \
   -H 'sec-ch-ua-platform: "macOS"' \
   --data-raw $'------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="username"\r\n\r\nchangeme@email.com\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="password"\r\n\r\nMyPassword\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB--\r\n' \
@@ -31,7 +31,7 @@ target=$(docker-compose port mealie 80)
   -H 'Authorization: Bearer' \
   -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundarynpgizoN5sX7Eg1AB' \
   -H 'Accept: application/json, text/plain, */*' \
-  -H 'Referer: https://mealie-u353.vm.elestio.app/' \
+  -H Referer: http://$target/ \
   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36' \
   -H 'sec-ch-ua-platform: "macOS"' \
   --data-raw $'------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="username"\r\n\r\nchangeme@email.com\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB\r\nContent-Disposition: form-data; name="password"\r\n\r\nMyPassword\r\n------WebKitFormBoundarynpgizoN5sX7Eg1AB--\r\n' \
