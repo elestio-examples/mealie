@@ -70,7 +70,7 @@ echo "jwt"
   -H 'Accept: application/json, text/plain, */*' \
   -H Referer: http://$target/ \
   -H 'sec-ch-ua-mobile: ?0' \
-  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjaGFuZ2VtZUBlbWFpbC5jb20iLCJleHAiOjE2NjY1MTgwMDh9.yocTStpu1otTcjU5jK1doTyNDbSndrOfsYihBTKdCKQ' \
+  -H Authorization: Bearer $jwt.access_token \
   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36' \
   -H 'sec-ch-ua-platform: "macOS"' \
   --compressed
