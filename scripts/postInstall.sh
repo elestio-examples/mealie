@@ -24,7 +24,7 @@ target=$(docker-compose port mealie 80)
 
   # Stocker
 
-  jwt={curl http://$target/api/auth/token \
+  JWT={curl http://$target/api/auth/token \
   -H 'sec-ch-ua: "Google Chrome";v="105", "Not)A;Brand";v="8", "Chromium";v="105"' \
   -H 'Accept-Language: en-US' \
   -H 'sec-ch-ua-mobile: ?0' \
@@ -70,7 +70,7 @@ echo "jwt"
   -H 'Accept: application/json, text/plain, */*' \
   -H Referer: http://$target/ \
   -H 'sec-ch-ua-mobile: ?0' \
-  -H Authorization: Bearer $jwt.access_token \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjaGFuZ2VtZUBlbWFpbC5jb20iLCJleHAiOjE2NjY1MTg3NjV9.Kri1ndPgWRp2dd4dvObAvoD148OOmcImmIPSF1CWg0c' \
   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36' \
   -H 'sec-ch-ua-platform: "macOS"' \
   --compressed
