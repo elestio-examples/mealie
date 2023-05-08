@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  mealie:
+    image: hkotel/mealie:omni-nightly
+    restart: always
+    ports:
+      - "172.17.0.1:9925:3000"
+    volumes:
+      - ./data:/app/data/
+    environment:
+      - ALLOW_SIGNUP=true
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Anchorage
