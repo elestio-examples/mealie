@@ -1,6 +1,5 @@
-cd docker;
+pwd=$(pwd)
 
-mv omni.Dockerfile Dockerfile
-mv frontend.Dockerfile frontend
+mv $pwd/docker/omni.Dockerfile $pwd/Dockerfile
 
 docker build . --tag elestio4test/mealie:latest
