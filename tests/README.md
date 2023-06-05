@@ -36,6 +36,11 @@ Copy the .env file from tests folder to the project directory
 
 Edit the .env file with your own values.
 
+Create data folders with correct permissions
+
+    mkdir -p ./data
+    chown -R 1000:1000 ./data
+
 Run the project with the following command
 
     docker-compose up -d
@@ -60,6 +65,23 @@ Here are some example snippets to help you get started creating a container.
         - PUID=1000
         - PGID=1000
         - TZ=America/Anchorage
+        - BASE_URL=${BASE_URL}
+        - DEFAULT_EMAIL=${ADMIN_EMAIL}
+        - SMTP_HOST=${SMTP_HOST}
+        - SMTP_PORT=${SMTP_PORT}
+        - SMTP_AUTH_STRATEGY=${SMTP_AUTH_STRATEGY}
+        - SMTP_FROM_EMAIL=${SMTP_FROM_EMAIL}
+
+### Environment variables
+
+|      Variable      |   Value (example)   |
+| :----------------: | :-----------------: |
+|      BASE_URL      | https://your.domain |
+|    ADMIN_EMAIL     |   admin@gmail.com   |
+|     SMTP_HOST      |     172.17.0.1      |
+|     SMTP_PORT      |         25          |
+| SMTP_AUTH_STRATEGY |        NONE         |
+|  SMTP_FROM_EMAIL   |   from@email.com    |
 
 # Maintenance
 
