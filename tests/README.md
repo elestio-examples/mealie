@@ -51,7 +51,7 @@ You can access the Web UI at: `http://your-domain:3333`
 
 Here are some example snippets to help you get started creating a container.
 
-    version: "3.7"
+    version: "3.3"
     services:
     mealie:
         image: elestio4test/mealie:latest
