@@ -22,7 +22,8 @@ environments:
     value: "NONE"
   - key: "SMTP_FROM_EMAIL"
     value: "[DOMAIN]@vm.elestio.app"
-
+  - key: "SOFTWARE_VERSION_TAG"
+    value: "omni-nightly"
 config:
   runTime: "dockerCompose"
   version: ""
