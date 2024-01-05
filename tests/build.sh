@@ -1,5 +1,8 @@
-pwd=$(pwd)
+# pwd=$(pwd)
 
-mv $pwd/docker/omni.Dockerfile $pwd/Dockerfile
+# mv $pwd/docker/omni.Dockerfile $pwd/Dockerfile
+cp -f ./docker/Dockerfile ./
 
-docker build . --tag elestio4test/mealie:latest
+docker buildx build . --output type=docker,name=elestio4test/mealie:latest | docker load
+
+# docker build . --tag elestio4test/mealie:latest
