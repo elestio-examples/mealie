@@ -4,7 +4,7 @@ services:
     image: hkotel/mealie:${SOFTWARE_VERSION_TAG}
     restart: always
     ports:
-      - "172.17.0.1:9925:3000"
+      - "172.17.0.1:9925:9000"
     volumes:
       - ./data:/app/data/
     environment:
