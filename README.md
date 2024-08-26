@@ -15,3 +15,13 @@ You can open Mealie UI here:
     URL: https://[CI_CD_DOMAIN]
     email: [ADMIN_EMAIL]
     password: [ADMIN_PASSWORD]
+
+# First Use:
+1. Visit https://[CI_CD_DOMAIN].
+2. Login using the username and password provided by Mealie on the login page.
+3. Register by filling in the following details:
+    - **Username:** root
+    - **Full Name:** Enter your name.
+    - **Email:** [ADMIN_EMAIL]
+    - **Password:** [ADMIN_PASSWORD]
+4. Click "Next" on each setup screen to complete the process.
