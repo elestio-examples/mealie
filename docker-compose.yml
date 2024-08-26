@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   mealie:
-    image: hkotel/mealie:${SOFTWARE_VERSION_TAG}
+    image: ghcr.io/mealie-recipes/mealie:${SOFTWARE_VERSION_TAG}
     restart: always
     ports:
       - "172.17.0.1:9925:9000"
